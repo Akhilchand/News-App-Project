@@ -10,9 +10,11 @@
 		<span class="border border-info">
 			<nav class="navbar navbar-expand-lg navbar-dark navbar-full"  style="background-color: #a2b89e" >
 				<div class="container">
+					<!-- Inserting BBC News image and hyperlink -->
 					<a class="navbar-brand" href="https://www.bbc.com/news">
 						<img src="{% static 'newsapp/images/bbc.png' %}" data-toggle="tooltip" data-placement="bottom" title="BBC News" width="70" height="70" alt="">
 					</a>
+					<!-- Inserting links for BBC news on navbar -->
 					<div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
 						<div class="navbar-nav mx-auto">
 							<a class="nav-item nav-link" href="http://feeds.bbci.co.uk/news/rss.xml"><b>BBC News RSS Feed</b></a>
@@ -22,6 +24,7 @@
 						</div>
 					</div>
 				</nav>
+				<!-- Retrieving news -->
 				<div class="container" style="background-color: white">
 					{% for new, des, i in mylist %}
 						<h1><p class="text-info">NEWS</p></h1> {{ new }}
