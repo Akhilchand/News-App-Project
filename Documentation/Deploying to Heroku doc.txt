@@ -1,0 +1,151 @@
+- Open your project folder
+
+- install pipenv:
+
+pipenv is a package that helps you to create virtual environment.
+
+* on cmd: pip install pipenv
+
+- Install git ( check git --version):
+
+Git is something that you need to push your files to Heroku server (simply copying and pasting files into Heroku server using
+this tool called "Git")
+
+git --version: shows git version installed on computer.
+
+- Install Heroku CLI (Heroku Command Line Interface):
+
+CLI is used to manage and scale your applications, provision add-ons, view your application logs and run your application locally.
+
+* Can be installed from 'Getting Started on Heroku with Python' web page.
+
+* After installing, open cmd and enter 'Heroku login' and enter login credentials same as our Heroku account login.
+
+* This will Login Heroku, which is a sign that Heroku is properly installed on our computer.
+
+- Create a virtual environment
+
+* Virtual environment isolates our project. Anything we install within the virtual environment does not affect the rest 
+
+of the computer and vice-versa.
+
+* on cmd: vitualenv . (to install virtual environment)
+
+* Activate the virtual environment by running activate.bat files within the scripts folder.
+
+- Check which version Django, requests you have and install it
+
+* On cmd: pip install django==2.1.12 (to install Django on our virtual environment)
+
+* On cmd: pip install requests==2.21.0 (to install requests package on our virtual environment)
+
+
+- Run manage.py and then stop it
+
+* on cmd: python manage.py runserver (this runs our project locally)
+
+- Now Django Heroku requires Procfile 
+
+* type 'web: gunicorn projectname.wsgi' on Procfile
+
+- Install gunicorn:
+
+* On cmd: pip install gunicorn
+
+*'gunicorn' is required by Heroku to run our website on the server.
+
+- Install django-heroku
+
+* On cmd: pip install django-heroku
+
+- Add stuff to settings.py file
+
+* Add the following import statement to the top of settings.py:
+
+import django_heroku
+
+Then add the following to the bottom of settings.py:
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+
+
+- pip freeze > requirements.txt
+
+* Whenever we upload something to Heroku, it goes to requirements.txt file and it installs the requirements on the server.
+
+* On cmd: pip freeze (this displays the packages needed on the Heroku server.
+
+* On cmd: pip freeze > requirements.txt (this creates a new file on your project folder which contains all the requirements
+
+that are needed by Heroku to install.
+
+
+- To create an app on heroku
+
+* On cmd: Heroku create subdomainname (choose the name as you wish)(readnewsongo for this project)
+
+* This creates the app with the name you give. This can be verified by opening our Heroku account dashboard.
+
+- git status git commands 
+
+* git init
+
+This creates a .git folder on our project folder that means git is initialized.
+
+* git status
+
+This shows all the folders that are not added to git.
+
+* git add -all
+
+This adds all the files to git.
+
+* git commit -m "commit message"
+
+This commits all folders to git.
+
+* Now we have to set remote to Heroku using below command.
+
+  heroku git:remote -a subdomainname
+
+* git push heroku master 
+
+This command pushes files to Heroku server.
+
+- Open up the website from subdomainname.herokuapp.com on the browser.
+
+- Admin panel not working. heroku run bash. Migrations
+
+* Now create superuser to access admin panel. To create superuser follow below steps:
+
+On cmd: heroku run bash (This will give access to files uploaded on Heroku Server)
+
+  bash gives access to files uploaded in Heroku server.
+
+$ls - shows directories inside Linux
+
+$python manage.py migrate (runs migrations)
+
+$python manage.py createsuperuser (To create superuser)
+
+- Now we can log in to administrator panel using below link
+
+ subdomainname.herokuapp.cpm/admin/
+
+- To update any files on the project (ex: HTML pages) and push changes to Heroku server
+
+On cmd: git status (shows updated or new files added)
+	
+	git add -all
+	
+	git commit -m "commit message"
+
+	git push heroku master
+
+
+- Now your web app is live on Heroku Server
+
+
+
+			      *** THANK YOU ***

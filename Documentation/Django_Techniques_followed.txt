@@ -1,0 +1,114 @@
+Django App Techniques followed
+-------------------------------
+
+I have used Django frame work which is used to create web based applications posted on my GitHub accoount.
+
+Before starting developing any application we create virtual environment
+
+virtualenv PROJECT_ENV_NAME (On command prompt)
+
+Next step is to activate the virtual environment running 'activate.bat' from scripts folder.
+
+To INSTALL THE "Django" open command prompt from the project folder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+pip install django==1.9
+
+To check the Django installed or not
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>>>import django
+>>>django.VERSION
+
+Creating project folder
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To create a Django project we will use django-admin.py
+
+*Django-admin.py is an django adminstrative file wch is used to create the django project architechture
+
+Create project folder running the below command
+
+django-admin startproject PROJECT_NAME
+
+This creates project folder which contains below sub folders in it
+1)__init__
+2)settings
+3)urls
+4)wsgi
+
+
+App is created by the below command in our project
+
+python manage.py startapp APPNAME
+
+After the execution of the above step
+Django will create the below folders aechitechture inside the project dictionary.
+
+models.py:- this file contains all the DB related objects
+
+views.py:-this file contains all the python related function.
+
+admin.py:- admin.py file is known as django adminstration file wch is used to control the project level activities.
+
+test.py:- this file should contain all the test cases related to django applications.
+
+migrations:- migrations folder contains modify activities at simultanious levels.
+
+Creating superuser for handling admin level activities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Superuser is an administrator of django project
+
+To create a super user the follow below command
+
+"python manage.py createsuperuser"
+
+Once we have created our project, we need to run the server to see the app working
+
+Running the server:-
+~~~~~~~~~~~~~~~~~~~
+To activate the django project we have to assign a base URL the perticular project
+
+The below cmnd is used to create a base URL and activate it.
+
+'python manage.py runserver'
+
+Accesing admin page:-
+~~~~~~~~~~~~~~~~~~~~
+We normally open [ http:\\127.0.0.1:8000/admin ]
+login with superuser credential
+
+We can access and make changes as admin from shell as well by running below command
+
+'python manage.py shell'
+
+ Data traversing techniques:-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ To display data from backend to frontend we follow below techniques.
+
+1) HttpResponse
+
+command:- from django.http import HttpResponse
+syntax:- HttpResponse('string to load')
+
+2) HttpResponseRedirect
+
+command:- from django.http import HttpResponseRedirect
+syntax:- HttpResponseRedirect('url')
+
+3) render
+
+command:- from django.shortcuts import render
+syntax:- render(request,'html page name')
+
+4) render_to_response
+
+command:- from django.shortcuts import render_to response
+synatx:- render_to_response('htmlpagename',{'html_var_name':data})
+
+
+**One project created can have any number of apps created on it, but I have created different projects for different 
+apps to avoid confusion on GitHub.
+
+
+***Thank you***
