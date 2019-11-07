@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<span class="border border-info">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-full"  style="background-color: #a2b89e" >
+				<div class="container">
+					<a class="navbar-brand" href="https://www.bbc.com/news">
+						<img src="{% static 'newsapp/images/bbc.png' %}" data-toggle="tooltip" data-placement="bottom" title="BBC News" width="70" height="70" alt="">
+					</a>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+						<div class="navbar-nav mx-auto">
+							<a class="nav-item nav-link" href="http://feeds.bbci.co.uk/news/rss.xml"><b>BBC News RSS Feed</b></a>
+							<a class="nav-item nav-link" href="https://www.bbc.com/news"><b>BBC News Home</b></a>
+						</div>
+						<ul class="navbar-nav ">
+						</div>
+					</div>
+				</nav>
+				<div class="container" style="background-color: white">
+					{% for new, des, i in mylist %}
+						<h1><p class="text-info">NEWS</p></h1> {{ new }}
+						{{ value|linebreaks }}
+						<img src="{{ i }}" alt="">
+						{{ value|linebreaks }}
+						<h4><p class="text-info">DESCRIPTION</p></h4> {{ des }}
+						{{ value|linebreaks }}
+					{% endfor %}
+					
+				</div>
+			</span>
+		</body>
+	</html>
